@@ -1,111 +1,199 @@
-
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Dalita's Studio</title>
+    <meta name="description" content="Privacy policy for apps by Dalita's Studio.">
+    <meta name="robots" content="index, follow">
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Privacy Policy | VGL Studio - Terms &amp; Policies</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Privacy Policy" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://vgl-studio.github.io/terms/diy-wallpaper/privacy/" />
-<meta property="og:url" content="https://vgl-studio.github.io/terms/diy-wallpaper/privacy/" />
-<meta property="og:site_name" content="VGL Studio - Terms &amp; Policies" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Privacy Policy" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Privacy Policy","url":"https://vgl-studio.github.io/terms/diy-wallpaper/privacy/"}</script>
-<!-- End Jekyll SEO tag -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/style.css">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+    <style>
+        :root {
+            --paper: #f5f1e9;
+            --ink: #1c1a17;
+            --muted: #6e665b;
+            --line: #ddd6c9;
+            --card: #fbf9f3;
+            --accent: #f0552d;
+            --serif: "Fraunces", Georgia, "Times New Roman", serif;
+            --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-<!-- Setup Google Analytics -->
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
+        body {
+            font-family: var(--sans);
+            font-weight: 450;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
+        a { color: inherit; text-decoration: none; }
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/terms/favicon.ico" -->
+        .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
-<!-- end custom head snippets -->
+        /* ---- Header ---- */
+        header {
+            position: sticky; top: 0; z-index: 20;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .wordmark { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: -0.01em; }
+        .wordmark .dot { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14.5px; }
+        .nav-links a { color: var(--muted); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links .store { color: var(--ink); font-weight: 500; }
+        .nav-links .store::after {
+            content: ""; display: block; height: 1.5px; background: var(--accent);
+            transform: scaleX(0); transform-origin: left; transition: transform .25s;
+        }
+        .nav-links .store:hover::after { transform: scaleX(1); }
+        @media (max-width: 620px) { .nav-links a:not(.store) { display: none; } }
 
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-      <h1><a href="https://vgl-studio.github.io/terms/">VGL Studio - Terms & Policies</a></h1>
-      
+        /* ---- Article ---- */
+        .doc { max-width: 760px; padding: 80px 0 96px; }
+        .eyebrow {
+            font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--muted); font-weight: 500; margin-bottom: 26px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+        .doc h1 {
+            font-family: var(--serif); font-weight: 500;
+            font-size: clamp(36px, 5.4vw, 56px); line-height: 1.06; letter-spacing: -0.02em;
+            margin-bottom: 18px;
+        }
+        .doc .meta {
+            font-size: 14.5px; color: var(--muted);
+            padding-bottom: 34px; margin-bottom: 40px; border-bottom: 1px solid var(--line);
+        }
+        .doc .meta a { color: var(--ink); border-bottom: 1.5px solid var(--line); }
+        .doc .meta a:hover { border-color: var(--accent); }
 
-      <h1 id="privacy-policy">Privacy Policy</h1>
+        .doc .lead { font-size: 18px; color: var(--ink); margin-bottom: 34px; }
 
-<p>This privacy policy applies to the Wallpaper Maker: DIY Collage app (referred to as “Application”) for mobile devices created by VGL Studio (the “Service Provider”) as a Free service, intended for use “AS IS”.</p>
+        .doc h2 {
+            font-family: var(--serif); font-weight: 500;
+            font-size: clamp(22px, 2.6vw, 27px); letter-spacing: -0.01em;
+            margin: 46px 0 16px;
+        }
+        .doc p { color: var(--muted); margin-bottom: 18px; max-width: 64ch; }
+        .doc p strong { color: var(--ink); font-weight: 600; }
+        .doc ul { list-style: none; margin: 0 0 18px; padding: 0; max-width: 64ch; }
+        .doc li {
+            color: var(--muted); padding-left: 22px; position: relative; margin-bottom: 9px;
+        }
+        .doc li::before {
+            content: ""; position: absolute; left: 2px; top: 12px;
+            width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+        }
+        .doc a:not(.meta a) { color: var(--ink); border-bottom: 1.5px solid var(--line); transition: border-color .2s; }
+        .doc a:hover { border-color: var(--accent); }
 
-<h2 id="information-collection-and-use">Information Collection and Use</h2>
+        .doc .effective {
+            margin-top: 46px; padding-top: 26px; border-top: 1px solid var(--line);
+            font-size: 14.5px; color: var(--muted);
+        }
 
-<p>The Application collects information upon download and use, including:</p>
+        /* ---- Footer ---- */
+        footer { border-top: 1px solid var(--line); }
+        .foot {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            gap: 16px; padding: 34px 0 40px;
+        }
+        .foot .col-name { font-family: var(--serif); font-weight: 600; font-size: 17px; }
+        .foot .col-name .dot { color: var(--accent); }
+        .foot nav { display: flex; gap: 26px; flex-wrap: wrap; }
+        .foot a, .foot .copy { font-size: 14px; color: var(--muted); }
+        .foot a:hover { color: var(--ink); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap nav">
+            <a class="wordmark" href="/">Dalita's Studio<span class="dot">.</span></a>
+            <nav class="nav-links">
+                <a href="/#work">Work</a>
+                <a href="/#studio">Studio</a>
+                <a class="store" href="https://play.google.com/store/apps/developer?id=Dalita%27s+Studio" target="_blank" rel="noopener">Google Play</a>
+            </nav>
+        </div>
+    </header>
 
-<ul>
-  <li>Device Internet Protocol address (IP address)</li>
-  <li>Pages visited, visit timing, and duration</li>
-  <li>Time spent on the Application</li>
-  <li>Mobile device operating system</li>
-</ul>
+    <main>
+        <article class="doc wrap">
+            <p class="eyebrow">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p class="meta">Applies to the Wallpaper Maker: DIY Collage app · Effective 20 March 2026 · <a href="/">Back to home</a></p>
 
-<p>The Application does not gather precise location information or use AI technologies to process data or provide features.</p>
+            <p class="lead">This privacy policy applies to the Wallpaper Maker: DIY Collage app (referred to as “Application”) for mobile devices created by VGL Studio (the “Service Provider”) as a Free service, intended for use “AS IS”.</p>
 
-<p>The Service Provider may contact you regarding important information, required notices, and marketing promotions using collected data.</p>
+            <h2>Information Collection and Use</h2>
+            <p>The Application collects information upon download and use, including:</p>
+            <ul>
+                <li>Device Internet Protocol address (IP address)</li>
+                <li>Pages visited, visit timing, and duration</li>
+                <li>Time spent on the Application</li>
+                <li>Mobile device operating system</li>
+            </ul>
+            <p>The Application does not gather precise location information or use AI technologies to process data or provide features.</p>
+            <p>The Service Provider may contact you regarding important information, required notices, and marketing promotions using collected data.</p>
 
-<h2 id="third-party-access">Third Party Access</h2>
+            <h2>Third Party Access</h2>
+            <p>Aggregated, anonymized data is periodically transmitted to external services. The Application uses these third-party services with their own privacy policies:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></li>
+            </ul>
+            <p>The Service Provider may disclose information as required by law, to protect rights or safety, investigate fraud, or respond to government requests, and to trusted service providers.</p>
 
-<p>Aggregated, anonymized data is periodically transmitted to external services. The Application uses these third-party services with their own privacy policies:</p>
+            <h2>Opt-Out Rights</h2>
+            <p>Users can stop data collection by uninstalling the Application through standard mobile device processes.</p>
 
-<ul>
-  <li><a href="https://policies.google.com/privacy">Google Play Services</a></li>
-  <li><a href="https://firebase.google.com/support/privacy">Google Analytics for Firebase</a></li>
-  <li><a href="https://firebase.google.com/support/privacy">Firebase Crashlytics</a></li>
-</ul>
+            <h2>Data Retention Policy</h2>
+            <p>User-provided data is retained during active use and a reasonable time thereafter. For deletion requests, contact <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
 
-<p>The Service Provider may disclose information as required by law, to protect rights or safety, investigate fraud, or respond to government requests, and to trusted service providers.</p>
+            <h2>Children</h2>
+            <p>The Application does not knowingly solicit data from or market to children under 13. Any discovered child data is immediately deleted. Parents concerned about child information should contact <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
 
-<h2 id="opt-out-rights">Opt-Out Rights</h2>
+            <h2>Security</h2>
+            <p>The Service Provider implements physical, electronic, and procedural safeguards to protect information.</p>
 
-<p>Users can stop data collection by uninstalling the Application through standard mobile device processes.</p>
+            <h2>Changes</h2>
+            <p>Policy updates are posted on this page. Continued use indicates consent to changes.</p>
 
-<h2 id="data-retention-policy">Data Retention Policy</h2>
+            <h2>Your Consent</h2>
+            <p>Using the Application constitutes consent to the processing described herein.</p>
 
-<p>User-provided data is retained during active use and a reasonable time thereafter. For deletion requests, contact <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
+            <h2>Contact Us</h2>
+            <p>Privacy questions should be directed to <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
 
-<h2 id="children">Children</h2>
+            <p class="effective">Effective date: 20 March 2026</p>
+        </article>
+    </main>
 
-<p>The Application does not knowingly solicit data from or market to children under 13. Any discovered child data is immediately deleted. Parents concerned about child information should contact <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
-
-<h2 id="security">Security</h2>
-
-<p>The Service Provider implements physical, electronic, and procedural safeguards to protect information.</p>
-
-<h2 id="changes">Changes</h2>
-
-<p>Policy updates are posted on this page. Continued use indicates consent to changes.</p>
-
-<p>Effective date: 2026-03-20</p>
-
-<h2 id="your-consent">Your Consent</h2>
-
-<p>Using the Application constitutes consent to the processing described herein.</p>
-
-<h2 id="contact-us">Contact Us</h2>
-
-<p>Privacy questions should be directed to <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>.</p>
-
-
-      
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-  </body>
+    <footer>
+        <div class="wrap foot">
+            <span class="col-name">Dalita's Studio<span class="dot">.</span></span>
+            <nav>
+                <a href="https://play.google.com/store/apps/developer?id=Dalita%27s+Studio" target="_blank" rel="noopener">Google Play</a>
+                <a href="/privacy-policy.html">Privacy</a>
+                <a href="mailto:vgldream01@gmail.com">Contact</a>
+            </nav>
+            <span class="copy">© 2026 Dalita's Studio</span>
+        </div>
+    </footer>
+</body>
 </html>
-

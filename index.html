@@ -4,9 +4,274 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalita's Studio</title>
+    <title>Dalita's Studio — games &amp; creative tools for Android</title>
+    <meta name="description" content="Dalita's Studio is an independent mobile studio making games and creative tools for Android, from idle clickers to AR camera filters.">
+    <meta property="og:title" content="Dalita's Studio">
+    <meta property="og:description" content="An independent mobile studio making games and creative tools for Android.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper: #f5f1e9;
+            --ink: #1c1a17;
+            --muted: #6e665b;
+            --line: #ddd6c9;
+            --card: #fbf9f3;
+            --accent: #f0552d;
+            --serif: "Fraunces", Georgia, "Times New Roman", serif;
+            --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            font-weight: 450;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+        /* ---- Header ---- */
+        header {
+            position: sticky; top: 0; z-index: 20;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .wordmark {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 21px;
+            letter-spacing: -0.01em;
+        }
+        .wordmark .dot { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14.5px; }
+        .nav-links a { color: var(--muted); transition: color .2s; }
+        .nav-links a:hover { color: var(--ink); }
+        .nav-links .store { color: var(--ink); font-weight: 500; }
+        .nav-links .store::after {
+            content: ""; display: block; height: 1.5px; background: var(--accent);
+            transform: scaleX(0); transform-origin: left; transition: transform .25s;
+        }
+        .nav-links .store:hover::after { transform: scaleX(1); }
+        @media (max-width: 620px) { .nav-links a:not(.store) { display: none; } }
+
+        /* ---- Hero ---- */
+        .hero { padding: 104px 0 88px; max-width: 880px; }
+        .eyebrow {
+            font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--muted); font-weight: 500; margin-bottom: 30px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(40px, 6.4vw, 74px);
+            line-height: 1.04;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+        }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero .lede {
+            font-size: clamp(17px, 2vw, 20px);
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 38px;
+        }
+        .actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: var(--sans); font-size: 15px; font-weight: 500;
+            padding: 13px 24px; border-radius: 2px;
+            background: var(--ink); color: var(--paper);
+            transition: background .2s;
+        }
+        .btn:hover { background: var(--accent); }
+        .btn svg { width: 17px; height: 17px; }
+        .text-link {
+            font-size: 15px; color: var(--ink); font-weight: 500;
+            border-bottom: 1.5px solid var(--line); padding-bottom: 2px; transition: border-color .2s;
+        }
+        .text-link:hover { border-color: var(--accent); }
+
+        /* ---- Section heading ---- */
+        .sec-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            gap: 20px; padding-bottom: 28px; margin-bottom: 40px;
+            border-top: 1px solid var(--line); padding-top: 26px;
+        }
+        .sec-head h2 {
+            font-family: var(--serif); font-weight: 500;
+            font-size: clamp(24px, 3vw, 30px); letter-spacing: -0.01em;
+        }
+        .sec-head .count { font-size: 14px; color: var(--muted); letter-spacing: 0.04em; }
+
+        /* ---- Work grid ---- */
+        .work { padding-bottom: 96px; }
+        .grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 1px; background: var(--line);
+            border: 1px solid var(--line);
+        }
+        .item {
+            background: var(--card);
+            padding: 34px 32px 38px;
+            display: flex; flex-direction: column; gap: 14px;
+            transition: background .25s;
+            position: relative;
+        }
+        .item:hover { background: #fff; }
+        .item .row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+        .item .num { font-family: var(--serif); font-size: 14px; color: var(--muted); }
+        .item .cat {
+            font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent); font-weight: 500;
+        }
+        .item h3 { font-family: var(--serif); font-weight: 500; font-size: 23px; letter-spacing: -0.01em; }
+        .item p { color: var(--muted); font-size: 15.5px; max-width: 42ch; }
+        .item .open {
+            margin-top: auto; font-size: 13.5px; font-weight: 500; color: var(--ink);
+            opacity: 0; transform: translateX(-6px); transition: opacity .25s, transform .25s;
+        }
+        .item:hover .open { opacity: 1; transform: translateX(0); }
+        @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .item { padding: 28px 24px 30px; } }
+
+        /* ---- Studio note ---- */
+        .studio { padding: 0 0 100px; }
+        .studio-inner {
+            display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px;
+            border-top: 1px solid var(--line); padding-top: 26px;
+        }
+        .studio-inner .label { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+        .studio-inner .body p {
+            font-family: var(--serif); font-weight: 400;
+            font-size: clamp(20px, 2.4vw, 26px); line-height: 1.5; letter-spacing: -0.01em;
+            margin-bottom: 22px;
+        }
+        .studio-inner .body p:last-child { margin-bottom: 0; }
+        .studio-inner .body .small { font-family: var(--sans); font-size: 16px; line-height: 1.7; color: var(--muted); }
+        .studio-inner .body .small a { color: var(--ink); border-bottom: 1.5px solid var(--line); }
+        .studio-inner .body .small a:hover { border-color: var(--accent); }
+        @media (max-width: 720px) { .studio-inner { grid-template-columns: 1fr; gap: 18px; } }
+
+        /* ---- Footer ---- */
+        footer { border-top: 1px solid var(--line); }
+        .foot {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            gap: 16px; padding: 34px 0 40px;
+        }
+        .foot .col-name { font-family: var(--serif); font-weight: 600; font-size: 17px; }
+        .foot .col-name .dot { color: var(--accent); }
+        .foot nav { display: flex; gap: 26px; flex-wrap: wrap; }
+        .foot a, .foot .copy { font-size: 14px; color: var(--muted); }
+        .foot a:hover { color: var(--ink); }
+    </style>
 </head>
 <body>
-    <p>Dalita's Studio.</p>
+    <header>
+        <div class="wrap nav">
+            <a class="wordmark" href="/">Dalita's Studio<span class="dot">.</span></a>
+            <nav class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#studio">Studio</a>
+                <a class="store" href="https://play.google.com/store/apps/developer?id=Dalita%27s+Studio" target="_blank" rel="noopener">Google Play</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero wrap">
+            <p class="eyebrow">Independent mobile studio</p>
+            <h1>We make games and <em>creative tools</em> for Android.</h1>
+            <p class="lede">From idle clickers to AR camera filters, we build the kind of apps you open for five minutes and keep coming back to. Six on Google Play so far — and counting.</p>
+            <div class="actions">
+                <a class="btn" href="https://play.google.com/store/apps/developer?id=Dalita%27s+Studio" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3a1 1 0 0 0-.6.9v17.6a1 1 0 0 0 .6.9l9.7-9.7L3.6 2.3Zm11.1 7.4 2.6-1.5-9.6-5.5 7 7Zm0 4.6-7 7 9.6-5.5-2.6-1.5Zm1.4-.8 3-1.7c.9-.5.9-1.8 0-2.3l-3-1.7-2.8 2.8 2.8 2.6Z"/></svg>
+                    See our apps on Google Play
+                </a>
+                <a class="text-link" href="#work">Browse the work ↓</a>
+            </div>
+        </section>
+
+        <section class="work wrap" id="work">
+            <div class="sec-head">
+                <h2>Selected work</h2>
+                <span class="count">Six titles · Google Play</span>
+            </div>
+            <div class="grid">
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.Trending.Clicker.game" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">01</span><span class="cat">Idle clicker</span></div>
+                    <h3>Trending Fun Clicker</h3>
+                    <p>Tap, upgrade, repeat. A breezy idle game built for the spare minutes between everything else.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.wallpapermaker.collage.diy" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">02</span><span class="cat">Creative tool</span></div>
+                    <h3>Wallpaper Maker: DIY Collage</h3>
+                    <p>Turn your own photos, stickers and layouts into a home screen that actually looks like you.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.boomchip.pvp.battle.game" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">03</span><span class="cat">Local multiplayer</span></div>
+                    <h3>Boom Chip — 2 Player Games</h3>
+                    <p>Two players, one phone. Quick head-to-head rounds for passing the time together.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.vgl.noisy.zoo" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">04</span><span class="cat">Kids &amp; sound</span></div>
+                    <h3>Noisy Zoo: Special Echoes</h3>
+                    <p>Animal sounds and playful echoes — a tiny, tappable world for curious little ears.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.handcontrol.magic" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">05</span><span class="cat">Magic &amp; casual</span></div>
+                    <h3>Hand Control</h3>
+                    <p>Wave your hand and let the magic follow — a playful, spell-flinging take on the casual game.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+                <a class="item" href="https://play.google.com/store/apps/details?id=com.ar.filter.funny.dog" target="_blank" rel="noopener">
+                    <div class="row"><span class="num">06</span><span class="cat">AR camera</span></div>
+                    <h3>AR Doggy: Funny Filter</h3>
+                    <p>Point the camera, add a playful dog filter, and watch it stick to the scene in real time.</p>
+                    <span class="open">View on Google Play →</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="studio wrap" id="studio">
+            <div class="studio-inner">
+                <div class="label">The studio</div>
+                <div class="body">
+                    <p>We're an independent team that likes making things that are easy to start and quietly hard to put down.</p>
+                    <p class="small">No grand mission statement — just casual games and creative tools, shipped to Android and shaped by the people who actually play them. If you've got feedback, a bug, or an idea, write to us at <a href="mailto:vgldream01@gmail.com">vgldream01@gmail.com</a>. We read everything.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap foot">
+            <span class="col-name">Dalita's Studio<span class="dot">.</span></span>
+            <nav>
+                <a href="https://play.google.com/store/apps/developer?id=Dalita%27s+Studio" target="_blank" rel="noopener">Google Play</a>
+                <a href="/privacy-policy.html">Privacy</a>
+                <a href="mailto:vgldream01@gmail.com">Contact</a>
+            </nav>
+            <span class="copy">© 2026 Dalita's Studio</span>
+        </div>
+    </footer>
 </body>
 </html>
